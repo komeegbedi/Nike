@@ -1,6 +1,11 @@
 :root{
      --animate-duration:1.5s;--animate-delay:1.5s;--animate-repeat:1
 }
+
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     min-height: 100vh;
     -webkit-transition: .5s ease-in-out;
@@ -42,9 +47,8 @@ section.hero{
     background: #c31432;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
    background-repeat: no-repeat;
+   background-attachment: fixed;
 }
 
 section.hero>div.container , section.hero div.row , 
@@ -97,10 +101,9 @@ section.hero div.socials i{
     background-color: #fff;
 }
 
-.slider h5.backend-text{
+h5.backend-text, svg.backend-text{
     font-size: 12vw;
     color: transparent;
-    /* z-index: -10; */
     position: absolute;
     top: 40%;
     left: 0;
@@ -112,7 +115,7 @@ section.hero div.socials i{
     text-transform: uppercase;
 
     -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
-    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-width: 4px;
     -webkit-text-stroke-color: rgba(255,255,255,.3);
 }
 
@@ -152,30 +155,173 @@ section.hero div.slider div.slider-inner img{
     left: 0;
     right: 0;
     margin: auto;
+    z-index: 2;
     /* transform: scale(2) rotate(-20deg); */
     filter: drop-shadow(-10px 100px 7px rgba(0,0,0,.2));
 }
 
 section.featured{
-    background-color: #030303;
-    height: 500px;
+    position: relative;
+    background: #fff;
+}
+
+section.featured h5.backend-text{
+    font-size: 20vw;
+    letter-spacing: 100px;
+    -webkit-text-stroke-color: rgba(135, 0, 0, .5);
 }
 
 section.featured > div.container{
     height: 100%;
 }
-section.featured div.bg{
-    /* background-image: url(./img/air-max-90-shoe-W1jPJZ.jfif);
-    background-position: center;
-    background-size: 70%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    width: 100%;
-    height: 100%; */
+
+section.featured  div.col-lg-6{
+    z-index: 10;
 }
 
 
- .animate{
+section.featured div.add-cart{
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    right: 0;
+    z-index: 11;
+}
+
+section.featured div.add-cart h4.price{
+    color: #000;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 50px;
+    letter-spacing: 5px;
+}
+section.featured .btn-grad {
+    background-image: linear-gradient(to right, #870000 0%, #190A05  51%, #870000  100%);
+    
+}
+
+section.featured  .btn-grad {
+    margin: auto;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;      
+    border-radius: 10px;
+    display: block;
+}
+
+section.featured .btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+section.more-items{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+section.more-items  div.row{
+    overflow-x: scroll;
+    white-space:nowrap;
+    flex-wrap: unset;
+    width: 100%;
+}
+
+section.more-items div.row div.col-lg-4{
+    vertical-align:top;
+    white-space:normal;
+}
+
+section.more-items div.row div.col-lg-4 img{
+    margin-bottom: 30px;
+}
+
+section.more-items div.row div.col-lg-4 .shoe-details h3{
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+section.more-items div.row::-webkit-scrollbar-track{
+	-webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+section.more-items div.row::-webkit-scrollbar{
+	width: 1px;
+	background-color: #F5F5F5;
+}
+
+section.more-items div.row::-webkit-scrollbar-thumb{
+	background-color: #190A05;
+	border: 2px solid #555555;
+}
+
+
+section.more-items .btn-grad {
+    background-image: linear-gradient(to right, #a73737 0%, #7a2828  51%, #a73737  100%);
+}
+section.more-items .btn-grad {
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+}
+
+section.more-items .btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+section.more-nike{
+    margin: 30px 50px;
+}
+
+section.more-nike p.lead{
+    font-size: 50px;
+}
+
+section.more-nike .bg{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 500px;
+    position: relative;
+}
+
+section.more-nike .btn.btn-dark{
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    width: 100px;
+    padding: 8px 28px;
+    position: absolute;
+    bottom: 20%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+         
+
+         
+.animate{
     -webkit-animation-duration:2s;
     animation-duration:2s;
     -webkit-animation-duration:var(--animate-duration);
@@ -296,6 +442,16 @@ section.featured div.bg{
     .slider-item h5.bottom-text{
         bottom: 40%;
     }
+
+     section.featured h5.backend-text{
+        font-size: 30vw;
+        letter-spacing: 20px;
+        top: 50%;
+    }
+
+    section.featured div.add-cart{
+        bottom: 2%;
+    }
 }
 @media only screen and (max-width: 992px){
 
@@ -343,6 +499,7 @@ section.featured div.bg{
         }
     }
 
+
     nav.fixed-top{
         position: absolute !important;
         background-color: transparent !important;
@@ -378,7 +535,7 @@ section.featured div.bg{
         position: absolute;
         height: 4px;
         width: 100%;
-        background: #000;
+        background: #fff;
         border-radius: 9px;
         opacity: 1;
         left: 0;
@@ -390,6 +547,11 @@ section.featured div.bg{
         -moz-transition: .25s ease-in-out;
         -o-transition: .25s ease-in-out;
         transition: .25s ease-in-out;
+    }
+
+
+    #nav-icon3.open span{
+        background: #000;
     }
 
     #nav-icon3 span:nth-child(1) {
