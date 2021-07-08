@@ -244,6 +244,7 @@ section.more-items div.row div.col-lg-4 .shoe-details h3{
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 2px;
+    margin-bottom: 10px;
 }
 
 section.more-items div.row::-webkit-scrollbar-track{
@@ -450,7 +451,11 @@ section.more-nike .btn.btn-dark{
     }
 
     section.featured div.add-cart{
-        bottom: 2%;
+        bottom: 0; 
+    }
+
+    section.more-nike .btn.btn-dark{
+        bottom: 30%;
     }
 }
 @media only screen and (max-width: 992px){
@@ -535,7 +540,7 @@ section.more-nike .btn.btn-dark{
         position: absolute;
         height: 4px;
         width: 100%;
-        background: #fff;
+        background: #000;
         border-radius: 9px;
         opacity: 1;
         left: 0;
@@ -547,11 +552,6 @@ section.more-nike .btn.btn-dark{
         -moz-transition: .25s ease-in-out;
         -o-transition: .25s ease-in-out;
         transition: .25s ease-in-out;
-    }
-
-
-    #nav-icon3.open span{
-        background: #000;
     }
 
     #nav-icon3 span:nth-child(1) {
